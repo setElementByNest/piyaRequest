@@ -1,0 +1,11 @@
+Run MQTT broker:
+mosquitto -c "C:\Program Files\mosquitto\mosquitto.conf" -v
+
+Sub:
+mosquitto_sub -h 127.0.0.1 -p 1883 -t nnt -u naste_mqtt -P 1234
+
+Pub:
+mosquitto_pub -h 127.0.0.1 -p 1883 -t nnt -u naste_mqtt -P 1234 -m "update"
+
+Turn off network protection:
+netsh advfirewall set allprofiles state off 
